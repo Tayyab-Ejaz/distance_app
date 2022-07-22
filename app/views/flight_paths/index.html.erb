@@ -1,0 +1,61 @@
+<table id="flights-table" class='table  table-striped' data-source="<%= root_path(format: :json) %>">
+  <thead class='thead-info'>
+    <tr>
+      <td colspan='6' class="bg-dark">
+        <h4 class="text-center text-white">Flight Paths</h4>
+      </td>
+    </tr>
+    <tr class="bg-secondary">
+      <td colspan='2' class='text-center border'>
+        <h6 class='text-white'>Origin</h6>
+      </td>
+      <td colspan='2' class='text-center border'>
+        <h6 class='text-white'>Destination</h6>
+      </td>
+      <td colspan='2' class='text-end'>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#calculateDistanceModal">
+          Calculate Flight Duration
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Distance</th>
+      <th>Duration</th>
+    </tr>
+  </thead>
+  <tbody id='flights-table-body'>
+    <%= render partial: "flight_path", collection: @flight_paths %>
+  </tbody>
+</table>
+
+<%= render 'calculate_distance_modal'%>
+<script type="text/javascript">
+
+  // $(document).ready(function () {
+  //   $("#users-datatable").dataTable({
+  //     processing: true,
+  //     serverSide: true,
+  //     ajax: {
+  //       url: $("#users-datatable").data("source"),
+  //     },
+  //     pagingType: "full_numbers",
+  //     columns: [
+  //       { data: "id" },
+  //       { data: "first_name" },
+  //       { data: "last_name" },
+  //       { data: "email" },
+  //       { data: "bio" },
+  //     ],
+  //     // pagingType is optional, if you want full pagination controls.
+  //     // Check dataTables documentation to learn more about
+  //     // available options.
+  //   });
+  // });
+
+</script>
+
+

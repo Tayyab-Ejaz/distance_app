@@ -1,0 +1,4 @@
+$("#calculateDistanceModal #toggle-modal").click()
+$("#distance").text('<%= @flight_path.distance %>')
+$("#duration").text('<%= @flight_path.journey_time %>')
+$("#flights-table-body").append("<%= escape_javascript(render @flight_path ) %>");

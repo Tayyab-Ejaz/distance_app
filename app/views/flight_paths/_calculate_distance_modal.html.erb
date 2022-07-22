@@ -1,0 +1,76 @@
+
+<div class="modal fade  " id="calculateDistanceModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+   <%= form_with url: flight_paths_calculate_flight_path, remote: true, class: "form-floating" do |form| %>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Calculate Flight Distance</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class='row mb-3'>
+              <div class='col-2 d-flex align-items-center'>
+                  <h6>Origin</h6>
+              </div>
+              <div class='col-10 row'>
+                  <div class='col-5 mb-3 form-floating px-0 mx-2'>
+                      <input type="number" class="form-control" id="origin_latitude" name="flight[origin_lat]" step="any" min='-90' max='90' required >
+                      <label for="origin_latitude">Latitude</label>
+                  </div>
+                    <div class='col-5 mb-3 form-floating px-0 mx-2'>
+                      <input type="number" class="form-control" id="origin_longitude" name="flight[origin_lng]" step="any" min='-180' max='180' required >
+                      <label for="origin_longitude">Longitude</label>
+                  </div>
+              </div>
+          </div>
+          <div class='row mb-3'>
+              <div class='col-2 d-flex align-items-center'>
+                  <h6>Destination</h6>
+              </div>
+              <div class='col-10 row'>
+                  <div class='col-5 mb-3 form-floating px-0 mx-2'>
+                      <input type="number" class="form-control" id="dest_latitude" name="flight[dest_lat]" step="any" min='-90' max='90' required >
+                      <label for="dest_latitude">Latitude</label>
+                  </div>
+                    <div class='col-5 mb-3 form-floating px-0 mx-2'>
+                      <input type="number" class="form-control" id="dest_longitude" name="flight[dest_lng]" step="any" min='-180' max='180' required >
+                      <label for="dest_longitude">Longitude</label>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close-btn">Close</button>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#resultsModal" class='d-none' id='toggle-modal'></button>
+          <button type="submit" class="btn btn-primary">Calculate</button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="modal fade" id="resultsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Flight Measures</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class='row'>
+          <div class='col-6'>
+            <h1 class='text-center' id='distance' ><h1>
+            <h6 class='text-center'>Distance</h6>
+          </div>
+          <div class='col-6'>
+            <h1 class='text-center' id='duration' ><h1>
+            <h6 class='text-center'>Duration</h6>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close-btn">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
