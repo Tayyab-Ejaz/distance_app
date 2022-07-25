@@ -1,7 +1,7 @@
 
 <div class="modal fade  " id="calculateDistanceModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
-   <%= form_with url: flight_paths_calculate_flight_path, remote: true, class: "form-floating" do |form| %>
+   <%= form_with url: flight_paths_calculate_flight_path, remote: true, class: "form-floating", id: 'calcualte-distance-form' do |form| %>
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="staticBackdropLabel">Calculate Flight Distance</h5>
@@ -42,7 +42,7 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close-btn">Close</button>
           <button type="button" data-bs-toggle="modal" data-bs-target="#resultsModal" class='d-none' id='toggle-modal'></button>
-          <button type="submit" class="btn btn-primary">Calculate</button>
+          <button type="submit" class="btn btn-primary" id='calculate-button'>Calculate</button>
         </div>
       </div>
     <% end %>
@@ -74,3 +74,9 @@
     </div>
   </div>
 </div>
+
+<script>
+  $("#calcualte-distance-form").on('submit', ()=> {
+    $('#loader').show()
+  })
+</script>

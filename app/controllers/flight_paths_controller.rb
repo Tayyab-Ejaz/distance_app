@@ -2,18 +2,10 @@ class FlightPathsController < ApplicationController
   before_action :flight_paths, only: [:index]
 
   def index
-    respond_to do |format|
-      format.html
-    end
   end
 
   def calculate_flight
-    response = DistanceApi.new(flight_params).get_flight_path
-    if response.present?
-      @flight_path = response
-    else
-      render status: 400, message: 'Coulnd fetch flight path data!'
-    end
+    @flight_path = DistanceApi.new(flight_params).get_flight_path
   end
 
   def flight_paths
