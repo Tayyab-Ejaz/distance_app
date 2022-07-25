@@ -40,3 +40,10 @@ bundle exec rails s
 ```
 
 And now you can visit the site with the URL http://localhost:3000
+
+##### How to use?
+  1. Visit Root Page
+  2. Click on 'Calculate Flight Duration' button
+  3. Add the coordinates for origin and destination
+  4. Click on calculate
+  5. You should be able to see the duration and distance of the journey
