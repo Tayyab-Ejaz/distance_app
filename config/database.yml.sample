@@ -1,0 +1,21 @@
+connection: &connection
+  adapter: postgresql
+  host: localhost
+  username: USERNAME
+  password: XXXXX
+  pool: 5
+  timeout: 5000
+  min_messages: warning
+
+development:
+  <<: *connection
+  database: distance_app_development
+test: &test
+  <<: *connection
+  database: distance_app_test
+
+production:
+  <<: *connection
+  database: distance_app_production
+cucumber:
+  <<: *test
