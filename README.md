@@ -47,3 +47,4 @@ And now you can visit the site with the URL http://localhost:3000
   3. Add the coordinates for origin and destination
   4. Click on calculate
   5. You should be able to see the duration and distance of the journey
+  6. The flights table should be updated with the new record
