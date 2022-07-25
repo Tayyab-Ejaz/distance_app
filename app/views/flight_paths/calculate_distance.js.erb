@@ -1,0 +1,12 @@
+<% if @flight_path.errors.any? %>
+  <% @flight_path.errors.full_messages.each do |message| %>
+    toastr.error("<%= message %>")
+  <% end %>
+<% else %>
+  $("#calculateDistanceModal #toggle-modal").click()
+  $("#distance").text('<%= @flight_path.distance %>')
+  $("#duration").text('<%= @flight_path.journey_time %>')
+  $("#flights-table-body").append("<%= escape_javascript(render @flight_path ) %>");
+  toastr.success('Request Successful!', 'Success!');
+<% end %>
+$('#loader').hide()

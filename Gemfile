@@ -16,6 +16,7 @@ gem 'httparty'
 gem 'toastr-rails'
 
 group :development do
+  gem 'byebug'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.2'
   gem 'spring'
